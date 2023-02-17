@@ -1,7 +1,7 @@
 # Rover Arm Manual Control 
-## The Rover Arm PCB has to be connected with rover body PCB 
-using software-serial.
 
+* The Rover Arm PCB has to be connected with rover body PCB 
+using software-serial.
 
 System descryption:
 
