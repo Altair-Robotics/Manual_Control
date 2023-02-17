@@ -1,4 +1,6 @@
-# rc_direct_drive
+# rc_direct_drive ( old )
+
+This branch contains code of manually driving rover body only.
 Radio controller receiver is directly connected to the MCU.
 
 System descryption:
