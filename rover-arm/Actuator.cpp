@@ -7,11 +7,12 @@ Actuator::Actuator(int pwm_f, int pwm_b) {
   Actuator::pwm_f = pwm_f;  //forward pwm
   Actuator::pwm_b = pwm_b;  //backward pwm
 
-  digitalWrite(pwm_f, LOW);
-  digitalWrite(pwm_b, LOW);
+  // digitalWrite(pwm_f, LOW);
+  // digitalWrite(pwm_b, LOW);
 }
 
 void Actuator::movement(int value) {
+  Serial.println(value);
   if (value == 3) {
     digitalWrite(pwm_b, LOW);
     digitalWrite(pwm_f, HIGH);

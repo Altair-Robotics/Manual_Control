@@ -7,7 +7,7 @@
 #define lateralChannel 3
 #define rotateChannel 4
 
-#define armed ch[4] > 1200
+#define armed ch[4] > 1200 and ch[4] < 1600
 #define debug true
 #define mux_channel ch[4]
 
@@ -48,13 +48,7 @@ void setup() {
 void loop() {
   readRC();
 
-  if (switch_to_arm) {
-    halt();
-    send_to_arm();
-  } else if (armed)
-    drive();
-  else
-    halt();
+  
 
   debugger();
 }
@@ -67,6 +61,13 @@ void readRC() {
     // delay(100);
   }
   Serial.println();
+
+  if (armed)
+    drive();
+  else
+    halt();
+  
+  send_to_arm();
 }
 
 void debugger() {
@@ -112,5 +113,6 @@ void send_to_arm() {
   ss1.listen();
   ss1.print(data);
 
-  delay(1);
+  delay(100);
+  
 }
