@@ -2,20 +2,21 @@
 #include "Actuator.h"
 #include <Servo.h>
 
-#define primaryChannel 3
-#define secondaryChannel 2
-#define wristChannel 7
-#define gripperChannel 8
-
-#define armed data[5] == '3'
-#define DEBUG true
-
 Actuator primary(10, 11);
 Actuator secondary(3, 5);
 Actuator wrist(6, 9);
 
 Servo gripperServo;
 #define gripperServoPin 2
+
+//RC channels: 
+#define primaryChannel 3
+#define secondaryChannel 2
+#define wristChannel 7
+#define gripperChannel 8
+
+#define armed data[5] == '3'
+#define DEBUG false
 
 String data;
 bool received = false;
