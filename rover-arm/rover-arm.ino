@@ -38,9 +38,9 @@ void loop() {
 
 void useGripper(int val) {
   if (val == 1)
-    gripperServo.writeMicroseconds(1200);
+    gripperServo.writeMicroseconds(1000);
   else if (val == 3)
-    gripperServo.writeMicroseconds(1800);
+    gripperServo.writeMicroseconds(2000);
   else
     gripperServo.writeMicroseconds(1500);
 }
