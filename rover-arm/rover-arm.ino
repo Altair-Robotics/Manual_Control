@@ -38,11 +38,11 @@ void loop() {
 
 void useGripper(int val) {
   if (val == 1)
-    gripperServo.writeMicroseconds(1000);
+    gripperServo.writeMicroseconds(1100);
   else if (val == 3)
-    gripperServo.writeMicroseconds(2000);
+    gripperServo.writeMicroseconds(1600);
   else
-    gripperServo.writeMicroseconds(1500);
+    gripperServo.writeMicroseconds(1400);
 }
 
 void manipulate() {
