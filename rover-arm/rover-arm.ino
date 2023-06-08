@@ -25,14 +25,24 @@ void setup() {
   Serial.begin(9600);
   Serial3.begin(4800);
   Serial.println("started");
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);  
 }
 
 void loop() {
+  // gripper.movement(3);
   receive();
   if (armed) {
     manipulate();
-  } else
-    halt();
+  } 
+  // else
+  //   halt();
 }
 
 
@@ -59,8 +69,8 @@ void receive() {
       Serial.println(data);
     received = true;
   }
-  if (DEBUG and !received) {
-    Serial.println("no data recieved");
-    delay(100);
-  }
+  // if (DEBUG and !received) {
+  //   Serial.println("no data recieved");
+  //   delay(100);
+  // }
 }

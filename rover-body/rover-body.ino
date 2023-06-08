@@ -36,10 +36,10 @@ void MapRCToPWM() {
 int demand_speed_left = 0;
 int demand_speed_right = 0;
 
-SoftwareSerial ss1(A4, A5);
+SoftwareSerial ss1(A4, A5);  //rx, tx
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   ss1.begin(4800);
 
   delay(2000);
@@ -48,7 +48,7 @@ void setup() {
 void loop() {
   readRC();
 
-  
+
 
   debugger();
 }
@@ -66,7 +66,7 @@ void readRC() {
     drive();
   else
     halt();
-  
+
   send_to_arm();
 }
 
@@ -101,11 +101,10 @@ void send_to_arm() {
   for (byte channel = 1; channel <= channelAmount; ++channel) {
     if (ch[channel - 1] >= 980 and ch[channel - 1] < 1300)
       data += "1";
-    else if (ch[channel - 1] > 1400 and ch[channel - 1] < 1600)
-      data += "2";
     else if (ch[channel - 1] > 1700)
       data += "3";
-    else data += "0";
+    else
+      data += "2";
   }
   data += "E";
   Serial.println(data);
@@ -114,5 +113,4 @@ void send_to_arm() {
   ss1.print(data);
 
   delay(100);
-  
 }
