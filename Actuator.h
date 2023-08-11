@@ -1,8 +1,6 @@
 //written by rakinrkz
 //this motor driver class is written for IBT2 or BTS 7960 motor driver
 
-#ifndef Motor_h
-#define Motor_h
 
 #include "Arduino.h"
 
@@ -17,4 +15,3 @@ class Actuator {
     int pwm_b;
 };
 
-#endif
